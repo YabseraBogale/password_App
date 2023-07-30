@@ -1,13 +1,13 @@
 function nameAndPassword(){
     let make=document.getElementById("made")
-    make.innerHTML='<p class="Name">'+ Username() +'</p>' + '<p class="password">'+ Userpassword() +'</p>'
+    make.innerText='username is '+Username() +' password is '+ Userpassword() 
 
 }
 
 function Username(){
-    const nameList=['yabsera', 'James', 'Robert', 'John', 'Michael', 'David', 'William', 'Richard', 'Joseph', 'Thomas', 'Christopher', 'Charles', 'Daniel', 'Matthew', 'Anthony', 'Mark', 'Donald', 'Steven', 'Andrew', 'Paul']
-    const symbol=['_','@','#','!']
-    const legth=Math.floor(Math.random()*10)
+    let nameList=['yabsera', 'James', 'Robert', 'John', 'Michael', 'David', 'William', 'Richard', 'Joseph', 'Thomas', 'Christopher', 'Charles', 'Daniel', 'Matthew', 'Anthony', 'Mark', 'Donald', 'Steven', 'Andrew', 'Paul']
+    let symbol=['_','@','#','!']
+    let legth=Math.floor(Math.random()*10)
     let userName=''
     if(legth%2==0){
         userName=nameList[Math.floor(Math.random()*20)]+nameList[Math.floor(Math.random()*20)]
@@ -19,18 +19,19 @@ function Username(){
 }
 
 
-function Userpassword(length=15){
+function Userpassword(lengths=15){
     
     let password=''
-    while(length>=0){
+    while(lengths>=0){
+
         let num=Math.floor(Math.random()*124)
         if(num>=33){
             password+=String.fromCharCode(num)
-            length--;
+            lengths-=1;
         }
         
     }
-    return password
-
+    
+   console.log(password.split(''))
+   return password + " length is "+ password.length.toString()
 }
-
