@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='addAccount.css')}}">
+    <title>Add Account</title>
+</head>
+<body>
+    <nav>
+        <a href="http://127.0.0.1:5000">Accounts</a>
+        <a href="#">Add Account</a>
+    </nav>
+    <form name="form" action="http://127.0.0.1:5000/Add" method="post">
+        <table>
+            <tr>
+                <td>
+                    Account Website
+                </td>
+                <td>
+                    <input type="text" name="website" id="website" placeholder="Example.com" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Account Username
+                </td>
+                <td>
+                    <input type="text" name="username" id="username" placeholder="username" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Account Email
+                </td>
+                <td>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    password
+                </td>
+                <td>
+                    <input type="password" name="password" id="password" minlength="8" placeholder="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Re-Password
+                </td>
+                <td>
+                    <input type="password" name="re_password" id="re_password" placeholder="re-enter password">
+                </td>
+            </tr>
+        </table>
+        <div class="submit">
+            <input type="submit"  value="submit">
+            <input type="reset" value="cancel">
+        </div>
+    </form>
+    
+    <div class="make">
+        <p>
+            give me username and password <button onclick="nameAndPassword()">Make</button>
+        </p>
+        <div id="made">
+
+        </div>
+    </div>
+
+    <div class="errcount">
+        <ul>
+            {% for i in sendhtml %}
+                <li>{{i}}</li>
+            {%endfor%}
+        </ul>
+    </div>
+    <script src="{{url_for('static',filename='nameAndPassword.js')}}"></script>
+</body>
+</html>
