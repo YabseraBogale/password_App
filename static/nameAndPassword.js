@@ -1,6 +1,8 @@
 function nameAndPassword(){
-    let make=document.getElementById("made")
-    make.innerText='username is '+Username() +' password is '+ Userpassword() 
+    let username_make=document.getElementById("username_made")
+    username_make.innerText='username is '+Username()
+    let password_make=document.getElementById("password_made")
+    password_make.innerText='password is '+ Userpassword() 
 
 }
 
@@ -33,5 +35,5 @@ function Userpassword(lengths=15){
     }
     
    console.log(password.split(''))
-   return password + " length is "+ password.length.toString()
+   return password
 }
