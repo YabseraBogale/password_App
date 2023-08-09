@@ -12,6 +12,8 @@ class accountDataBase():
         )
         self.connect.commit()
         return "Sucessful"
+    
+
     def password(self,password):
         self.pointer.execute("select * from Account where website=(?)",(password,))
         self.data=self.pointer.fetchall()

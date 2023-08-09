@@ -1,8 +1,16 @@
+create table Personal(
+	username varchar(30) not primary key,
+	password varchar(30) not null 
+);
+
 create table Account(
+	username varchar(30) not null primary key,
   	website varchar(30) not null,
-	username varchar(20) not null,
+	websiteUsername varchar(20) not null,
   	password varchar(30) not null,
-  	email varchar(30) not null
+  	email varchar(30) not null,
+	foregin key (username) references Personal(usename)
+	
 );
 
 

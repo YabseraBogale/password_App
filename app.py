@@ -4,7 +4,7 @@ from database import accountDataBase
 app=Flask(__name__)
 db=accountDataBase()
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/Search',methods=['GET','POST'])
 def index():
     if request.method=='POST':
         if request.form['website']!='':
@@ -31,6 +31,10 @@ def accountAdd():
             return render_template('sucess.html')
     return render_template('addAccount.html')
     
+@app.route('/login',methods=['GET','POST'])
+def login():
+    return render_template('login.html')
+
 
 
 if __name__=="__main__":
